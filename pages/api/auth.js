@@ -18,6 +18,7 @@ export default (req, res) => {
         username,
         password
       } = body
+      
       //TODO We need to Validate credentials in one middleware (encrypted)
       const user = data.find(user => user.email === username)
       if (!user) {
