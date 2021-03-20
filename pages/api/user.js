@@ -10,6 +10,7 @@ export default (req, res) => {
     }
 
     const name = req.cookies.authorization;
+    
     if (!name) {
         return res.status(404).end()
     }

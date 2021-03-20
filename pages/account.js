@@ -7,8 +7,9 @@ import useSWR from 'swr'
 
 const fetcher = async (url) => api.get(url)
 
-
 export default function Account({ query }) {
+
+  const router = useRouter();
 
   React.useEffect(() => {
 
@@ -16,8 +17,8 @@ export default function Account({ query }) {
 
   }, [])
 
-  const router = useRouter();
   const { data, error } = useSWR('/api/user', fetcher)
+  
   if (error) {
     router.push('/')
   }
