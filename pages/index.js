@@ -12,6 +12,7 @@ export default function Home() {
     e.preventDefault()
     try {
       await api.post('/api/auth', { username, password })
+
       router.push('/account')
     } catch (e) {
       setPassword('')
